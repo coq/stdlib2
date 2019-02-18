@@ -1,0 +1,19 @@
+-arg -noinit
+-arg -w
+-arg +non-primitive-record
+-R . Stdlib
+
+abstract.v
+bool.v
+congr.v
+datatypes.v
+decimal.v
+equality.v
+functions.v
+lock.v
+nat.v
+prelude.v
+prelude_plugins.v
+prop.v
+ssreflect.v
+matching.v
