@@ -1,0 +1,22 @@
+stages:
+- build
+
+image: nixorg/nix
+
+variables:
+  NIX_PATH: nixpkgs=channel:nixpkgs-unstable
+  NIXOS_PUBLIC_KEY: cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+  EXTRA_SUBSTITUTERS: https://coq.cachix.org
+  EXTRA_PUBLIC_KEYS: coq.cachix.org-1:5QW/wwEnD+l2jvN6QRbRRsa4hBHG3QiQQ26cxu1F5tI=
+
+build-stdlib2:
+  stage: build
+  before_script:
+  - nix-env -iA cachix --prebuilt-only -f https://cachix.org/api/v1/install
+  - >-
+    nix-shell
+    --extra-substituters "$EXTRA_SUBSTITUTERS"
+    --trusted-public-keys "$NIXOS_PUBLIC_KEY $EXTRA_PUBLIC_KEYS"
+    --run 'echo done'
+  script:
+  - nix-build
