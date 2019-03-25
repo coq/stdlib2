@@ -25,4 +25,4 @@ Questions and discussions are welcome at this stage. In particular, the wiki and
 issues (as opposed to code reviews) can be used to share and discuss opinions.
 
 External code contribution will be integrated during the last two phases. See
-[CONTRIBUTING.md](contributing guide)
+the [contributing guide](CONTRIBUTING.md).
