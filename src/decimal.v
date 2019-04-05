@@ -44,6 +44,15 @@ Notation zero := (D0 Nil).
 
 Variant int := Pos (d:uint) | Neg (d:uint).
 
+(** For decimal numbers, we use two constructors [Decimal] and
+    [DecimalExp], depending on whether or not they are given with an
+    exponent (e.g., 1.02e+01). [i] is the integral part while [f] is
+    the fractional part (beware that leading zeroes do matter). *)
+
+Variant decimal :=
+ | Decimal (i:int) (f:uint)
+ | DecimalExp (i:int) (f:uint) (e:int).
+
 Declare Scope dec_uint_scope.
 Delimit Scope dec_uint_scope with uint.
 Bind Scope dec_uint_scope with uint.
@@ -54,6 +63,7 @@ Bind Scope dec_int_scope with int.
 
 Register uint as num.uint.type.
 Register int as num.int.type.
+Register decimal as num.decimal.type.
 
 (** This representation favors simplicity over canonicity.
     For normalizing numbers, we need to remove head zero digits,
