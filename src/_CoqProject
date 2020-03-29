@@ -8,6 +8,8 @@ bool.v
 congr.v
 datatypes.v
 decimal.v
+hexadecimal.v
+numeral.v
 equality.v
 functions.v
 lock.v
