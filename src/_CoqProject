@@ -9,7 +9,7 @@ congr.v
 datatypes.v
 decimal.v
 hexadecimal.v
-numeral.v
+number.v
 equality.v
 functions.v
 lock.v
