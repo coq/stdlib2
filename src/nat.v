@@ -1,4 +1,4 @@
-Require Import prelude ssreflect datatypes numeral.
+Require Import prelude ssreflect datatypes number.
 
 Inductive nat :=
 | O
@@ -66,10 +66,10 @@ Fixpoint of_hex_uint_acc (d:hexadecimal.uint)(acc:nat) :=
 
 Definition of_hex_uint (d:hexadecimal.uint) := of_hex_uint_acc d O.
 
-Definition of_num_uint (d:numeral.uint) :=
+Definition of_num_uint (d:number.uint) :=
   match d with
-  | numeral.UIntDec d => of_uint d
-  | numeral.UIntHex d => of_hex_uint d
+  | number.UIntDec d => of_uint d
+  | number.UIntHex d => of_hex_uint d
   end.
 
 Definition to_little_uint (n: nat) (acc: decimal.uint) : decimal.uint :=
@@ -78,6 +78,6 @@ Definition to_little_uint (n: nat) (acc: decimal.uint) : decimal.uint :=
 Definition to_uint (n: nat) : decimal.uint :=
   decimal.rev (to_little_uint n decimal.zero).
 
-Definition to_num_uint n := numeral.UIntDec (to_uint n).
+Definition to_num_uint n := number.UIntDec (to_uint n).
 
-Numeral Notation nat of_num_uint to_num_uint : nat_scope.
+Number Notation nat of_num_uint to_num_uint : nat_scope.

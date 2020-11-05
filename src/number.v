@@ -16,8 +16,8 @@ Variant uint := UIntDec (u:decimal.uint) | UIntHex (u:hexadecimal.uint).
 
 Variant int := IntDec (i:decimal.int) | IntHex (i:hexadecimal.int).
 
-Variant numeral := Dec (d:decimal.decimal) | Hex (h:hexadecimal.hexadecimal).
+Variant number := Dec (d:decimal.decimal) | Hex (h:hexadecimal.hexadecimal).
 
 Register uint as num.num_uint.type.
 Register int as num.num_int.type.
-Register numeral as num.numeral.type.
+Register number as num.number.type.
