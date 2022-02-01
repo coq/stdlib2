@@ -47,9 +47,9 @@ Arguments eq {A} x _.
 Prenex Implicits eq_refl.
 Arguments eq_refl {A x}, {A} x.
 
-Arguments eq_ind [A] x P _ y _.
-Arguments eq_rec [A] x P _ y _.
-Arguments eq_rect [A] x P _ y _.
+Arguments eq_ind [A] x P _ y _ : rename.
+Arguments eq_rec [A] x P _ y _ : rename.
+Arguments eq_rect [A] x P _ y _ : rename.
 
 Definition eq_rect_dep A (x: A) (P: forall y, x = y -> Type) (ih: P x (eq_refl x)) y (e: x = y) : P y e :=
   let: eq_refl := e in ih.
