@@ -17,7 +17,7 @@ Global Unset Auto Template Polymorphism.
 Global Set Loose Hint Behavior "Strict".
 
 (** Enable proof mode. *)
-Declare ML Module "ltac_plugin".
+Declare ML Module "coq-core.plugins.ltac".
 Global Set Default Proof Mode "Classic".
 
 (** Scopes *)
