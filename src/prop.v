@@ -47,10 +47,10 @@ Register not as core.not.type.
 (** Create the “core” hint database, and set its transparent state for
   variables and constants explicitely. *)
 Create HintDb core.
-Hint Variables Opaque : core.
-Hint Constants Opaque : core.
+#[global] Hint Variables Opaque : core.
+#[global] Hint Constants Opaque : core.
 
-Hint Unfold not: core.
+#[global] Hint Unfold not: core.
 
 (* The basic closing tactic "done".                                           *)
 Ltac done :=
